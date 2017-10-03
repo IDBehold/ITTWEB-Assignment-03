@@ -5,7 +5,7 @@ import {CreateWorkoutComponent} from './create-workout/create-workout.component'
 import {CreateExerciseComponent} from './create-exercise/create-exercise.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/workouts', pathMatch: 'full'},
+  {path: '', redirectTo: 'workouts', pathMatch: 'full'},
   {path: 'create-workout', component: CreateWorkoutComponent},
   {path: 'create-exercise', component: CreateExerciseComponent},
   {path: 'workouts', component: WorkoutsComponent}
