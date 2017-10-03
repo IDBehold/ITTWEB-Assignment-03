@@ -1,9 +1,9 @@
 import {Exercise} from './exercise';
 
 export class Workout {
-  
 
-  id: string;
+
+  _id: string;
   name: string;
   exercises: Array<Exercise>;
   count: number;

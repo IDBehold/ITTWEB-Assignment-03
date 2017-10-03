@@ -16,7 +16,7 @@ export class WorkoutsService {
   getWorkouts(): Promise<Workout[]> {
     return this.http.get(this.apiUrl)
       .toPromise()
-      .then(response => response.json().data as Workout[])
+      .then(response => response.json() as Workout)
       .catch(this.handleError);
   }
 
@@ -24,26 +24,25 @@ export class WorkoutsService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Workout)
+      .then(response => response.json() as Workout)
       .catch(this.handleError);
   }
 
   createWorkout(name: string): Promise<Workout> {
     const url = `${this.apiUrl}/workout`;
     return this.http
-      .post(this.apiUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(url, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Workout)
+      .then(res => res.json() as Workout)
       .catch(this.handleError);
   }
 
-  createExercise(workoutId: string, exercise: Exercise): Promise<Workout> {
+  createExercise(id: string, exercise: string, description: string, set: number, reps: number): Promise<Workout> {
     const url = `${this.apiUrl}/exercise`;
-    exercise.id = workoutId;
     return this.http
-      .post(this.apiUrl, JSON.stringify({exercise}), {headers: this.headers})
+      .post(url, JSON.stringify({id: id, exercise: exercise, description: description, set: set, reps: reps}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Workout)
+      .then(res => res.json() as Workout)
       .catch(this.handleError);
   }
 
@@ -51,12 +50,12 @@ export class WorkoutsService {
     const url = `${this.apiUrl}/countUp/${id}`;
     return this.http.put(url, {})
       .toPromise()
-      .then(res => res.json().data as Workout)
+      .then(res => res.json() as Workout)
       .catch(this.handleError);
   }
 
   deleteWorkout(id: string): Promise<void> {
-    const url = `${this.apiUrl}/${id}}`
+    const url = `${this.apiUrl}/${id}}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)

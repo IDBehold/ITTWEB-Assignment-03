@@ -1,32 +1,25 @@
-<p>
-  hej
-</p>
-
-<ul>
-    <li *ngFor="let workout of workouts">
-    <span>{{workout.name}}</span>
-      <!--<button onclick="deleteWorkout(workout.id)">delete</button>-->
-      <!--<button onclick="countUp(workout.id)">count</button>-->
-      <!--<div>-->
-        <!--<table>-->
-          <!--<thead>-->
-          <!--<tr>-->
-            <!--<td>Exercise</td>-->
-            <!--<td>Description</td>-->
-            <!--<td>Set</td>-->
-            <!--<td>Reps/Time</td>-->
-          <!--</tr>-->
-          <!--</thead>-->
-          <!--<tbody>-->
-          <!--<tr *ngFor="let exercise of workout">-->
-            <!--<td>{{exercise.exercise}}</td>-->
-            <!--<td>{{exercise.description}}</td>-->
-            <!--<td>{{exercise.set}}</td>-->
-            <!--<td>{{exercise.reps}}</td>-->
-          <!--</tr>-->
-          <!--</tbody>-->
-        <!--</table>-->
-      <!--</div>-->
-    </li>
-
-</ul>
+<div *ngFor="let workout of workouts" >
+  <h3>{{workout.name}}</h3>
+  <!--<button (click)="deleteWorkout(workout._id)" type='button' class="btn btn-danger glyphicon glyphicon-trash"></button> -->
+  <button (click)="countUp(workout._id)" type='button' class="btn btn-info glyphicon glyphicon-arrow-up">  {{workout.count}}</button>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Exercise</td>
+        <td>Description</td>
+        <td>Set</td>
+        <td>Reps/Time</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let exercise of workout.exercises">
+        <td>{{exercise.exercise}}</td>
+        <td>{{exercise.description}}</td>
+        <td>{{exercise.set}}</td>
+        <td>{{exercise.reps}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

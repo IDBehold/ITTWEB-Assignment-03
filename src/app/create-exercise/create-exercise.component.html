@@ -1,3 +1,22 @@
-<p>
-  create-exercise works!
-</p>
+<br><br><br>
+
+<div class="form-group">
+
+  <select #id>
+    <option *ngFor="let workout of workouts" value="{{workout._id}}">{{workout.name}}</option>
+  </select>
+  <br>
+  <label>Exercise:</label>
+  <input #exercise class="form-control"/>
+  <br>
+  <label>Description:</label>
+  <input #description class="form-control"/>
+  <br>
+  <label>Set:</label>
+  <input #set class="form-control"/>
+  <br>
+  <label>Rep/Times:</label>
+  <input #rep class="form-control"/>
+  <br>
+  <button (click)="createExercise(id.value, exercise.value ,description.value,set.value,rep.value)" class="btn btn-primary">Save</button>
+</div>
