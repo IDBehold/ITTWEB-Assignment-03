@@ -1,3 +1,32 @@
 <p>
-  workouts works!
+  hej
 </p>
+
+<ul>
+    <li *ngFor="let workout of workouts">
+    <span>{{workout.name}}</span>
+      <!--<button onclick="deleteWorkout(workout.id)">delete</button>-->
+      <!--<button onclick="countUp(workout.id)">count</button>-->
+      <!--<div>-->
+        <!--<table>-->
+          <!--<thead>-->
+          <!--<tr>-->
+            <!--<td>Exercise</td>-->
+            <!--<td>Description</td>-->
+            <!--<td>Set</td>-->
+            <!--<td>Reps/Time</td>-->
+          <!--</tr>-->
+          <!--</thead>-->
+          <!--<tbody>-->
+          <!--<tr *ngFor="let exercise of workout">-->
+            <!--<td>{{exercise.exercise}}</td>-->
+            <!--<td>{{exercise.description}}</td>-->
+            <!--<td>{{exercise.set}}</td>-->
+            <!--<td>{{exercise.reps}}</td>-->
+          <!--</tr>-->
+          <!--</tbody>-->
+        <!--</table>-->
+      <!--</div>-->
+    </li>
+
+</ul>
